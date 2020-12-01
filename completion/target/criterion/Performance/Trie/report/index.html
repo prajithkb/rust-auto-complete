@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Performance/Trie Summary - Criterion.rs</title>
+    <style type="text/css">
+        body {
+            font: 14px Helvetica Neue;
+            text-rendering: optimizelegibility;
+        }
+
+        .body {
+            width: 960px;
+            margin: auto;
+        }
+
+        a:link {
+            color: #1F78B4;
+            text-decoration: none;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 300;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        #footer {
+            height: 40px;
+            background: #888;
+            color: white;
+            font-size: larger;
+            font-weight: 300;
+        }
+
+        #footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        #footer p {
+            text-align: center
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+        <h2>Performance/Trie</h2>
+        <h3>Violin Plot</h3>
+        <a href="violin.svg">
+            <img src="violin.svg" alt="Violin Plot" />
+        </a>
+        <p>This chart shows the relationship between function/parameter and iteration time. The thickness of the shaded
+            region indicates the probability that a measurement of the given function/parameter would take a particular
+            length of time.</p>
+        <section class="plots">
+            <a href="../../../Performance/Trie/imm_3/report/index.html">
+                <h4>Performance/Trie/imm/3</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../../Performance/Trie/imm_3/report/pdf.svg">
+                                <img src="../../../Performance/Trie/imm_3/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../../Performance/Trie/imm_3/report/regression.svg">
+                                <img src="../../../Performance/Trie/imm_3/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../../Performance/Trie/ca_2/report/index.html">
+                <h4>Performance/Trie/ca/2</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../../Performance/Trie/ca_2/report/pdf.svg">
+                                <img src="../../../Performance/Trie/ca_2/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../../Performance/Trie/ca_2/report/regression.svg">
+                                <img src="../../../Performance/Trie/ca_2/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../../Performance/Trie/di_2/report/index.html">
+                <h4>Performance/Trie/di/2</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../../Performance/Trie/di_2/report/pdf.svg">
+                                <img src="../../../Performance/Trie/di_2/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../../Performance/Trie/di_2/report/regression.svg">
+                                <img src="../../../Performance/Trie/di_2/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../../Performance/Trie/impe_4/report/index.html">
+                <h4>Performance/Trie/impe/4</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../../Performance/Trie/impe_4/report/pdf.svg">
+                                <img src="../../../Performance/Trie/impe_4/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../../Performance/Trie/impe_4/report/regression.svg">
+                                <img src="../../../Performance/Trie/impe_4/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../../Performance/Trie/inter_5/report/index.html">
+                <h4>Performance/Trie/inter/5</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../../Performance/Trie/inter_5/report/pdf.svg">
+                                <img src="../../../Performance/Trie/inter_5/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../../Performance/Trie/inter_5/report/regression.svg">
+                                <img src="../../../Performance/Trie/inter_5/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../../Performance/Trie/pre_3/report/index.html">
+                <h4>Performance/Trie/pre/3</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../../Performance/Trie/pre_3/report/pdf.svg">
+                                <img src="../../../Performance/Trie/pre_3/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../../Performance/Trie/pre_3/report/regression.svg">
+                                <img src="../../../Performance/Trie/pre_3/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../../Performance/Trie/trans_5/report/index.html">
+                <h4>Performance/Trie/trans/5</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../../Performance/Trie/trans_5/report/pdf.svg">
+                                <img src="../../../Performance/Trie/trans_5/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../../Performance/Trie/trans_5/report/regression.svg">
+                                <img src="../../../Performance/Trie/trans_5/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../../Performance/Trie/sub_3/report/index.html">
+                <h4>Performance/Trie/sub/3</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../../Performance/Trie/sub_3/report/pdf.svg">
+                                <img src="../../../Performance/Trie/sub_3/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../../Performance/Trie/sub_3/report/regression.svg">
+                                <img src="../../../Performance/Trie/sub_3/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../../Performance/Trie/non_3/report/index.html">
+                <h4>Performance/Trie/non/3</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../../Performance/Trie/non_3/report/pdf.svg">
+                                <img src="../../../Performance/Trie/non_3/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../../Performance/Trie/non_3/report/regression.svg">
+                                <img src="../../../Performance/Trie/non_3/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../../Performance/Trie/un_2/report/index.html">
+                <h4>Performance/Trie/un/2</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../../Performance/Trie/un_2/report/pdf.svg">
+                                <img src="../../../Performance/Trie/un_2/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../../Performance/Trie/un_2/report/regression.svg">
+                                <img src="../../../Performance/Trie/un_2/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../../Performance/Trie/mid_3/report/index.html">
+                <h4>Performance/Trie/mid/3</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../../Performance/Trie/mid_3/report/pdf.svg">
+                                <img src="../../../Performance/Trie/mid_3/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../../Performance/Trie/mid_3/report/regression.svg">
+                                <img src="../../../Performance/Trie/mid_3/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../../Performance/Trie/anti_4/report/index.html">
+                <h4>Performance/Trie/anti/4</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../../Performance/Trie/anti_4/report/pdf.svg">
+                                <img src="../../../Performance/Trie/anti_4/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../../Performance/Trie/anti_4/report/regression.svg">
+                                <img src="../../../Performance/Trie/anti_4/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../../Performance/Trie/in_2/report/index.html">
+                <h4>Performance/Trie/in/2</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../../Performance/Trie/in_2/report/pdf.svg">
+                                <img src="../../../Performance/Trie/in_2/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../../Performance/Trie/in_2/report/regression.svg">
+                                <img src="../../../Performance/Trie/in_2/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../../Performance/Trie/re_2/report/index.html">
+                <h4>Performance/Trie/re/2</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../../Performance/Trie/re_2/report/pdf.svg">
+                                <img src="../../../Performance/Trie/re_2/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../../Performance/Trie/re_2/report/regression.svg">
+                                <img src="../../../Performance/Trie/re_2/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../../Performance/Trie/over_4/report/index.html">
+                <h4>Performance/Trie/over/4</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../../Performance/Trie/over_4/report/pdf.svg">
+                                <img src="../../../Performance/Trie/over_4/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../../Performance/Trie/over_4/report/regression.svg">
+                                <img src="../../../Performance/Trie/over_4/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <div id="footer">
+        <p>This report was generated by
+            <a href="https://github.com/bheisler/criterion.rs">Criterion.rs</a>, a statistics-driven benchmarking
+            library in Rust.</p>
+    </div>
+</body>
+
+</html>
