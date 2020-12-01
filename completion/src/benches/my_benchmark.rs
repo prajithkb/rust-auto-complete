@@ -6,7 +6,7 @@ use std::{fs::File, time::Instant};
 
 fn input() -> Vec<(String, u32)> {
     let file =
-        File::open("/Users/kprajith/workspace/rust/auto-complete/100_000_words.txt").unwrap();
+        File::open("../100_000_words.txt").unwrap();
     let reader = BufReader::new(file);
     reader
         .lines()
