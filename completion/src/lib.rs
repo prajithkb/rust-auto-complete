@@ -13,8 +13,12 @@ pub mod trie;
 /// The score is used to rank the suggestions (higher score = higher suggestion)
 #[derive(Debug, Eq, Hash)]
 pub struct Suggestion {
-    pub(crate) word: Rc<String>,
+    pub word: Rc<String>,
     score: u32,
+}
+
+pub trait AutoCompletor {
+    fn suggestions(&self, prefix: &str) -> Vec<Rc<Suggestion>>;
 }
 
 impl Suggestion {

@@ -1,9 +1,11 @@
 //! This is the trie module.
 //! This module implements trie data structure in a compressed form.
 
+
+use crate::AutoCompletor;
 use crate::{internal::Node, Suggestion};
 use crate::internal::{Edge};
-use std::{rc::Rc};
+use std::{rc::Rc, vec::Vec};
 use std::{
     fmt::{Debug},
 };
@@ -26,14 +28,17 @@ impl Trie {
     pub fn new(input: &[(&str, u32)]) -> Self {
         let root = Node::empty();
         let mut trie = Trie::from(root);
-        input.iter().for_each(|(input, score)| {
-            trie.insert(((*input).into(), *score));
+        input
+            .iter()
+            .for_each(|(input, score)| {
+            trie.add_suggestion(((*input).into(), *score));
         });
         trie
     }
 
+
     /// inserts the given (suggestion, score) tuple into the `Trie`
-    pub fn insert(&mut self, suggestion: (String, u32)) {
+    pub fn add_suggestion(&mut self, suggestion: (String, u32)) {
         let str: Vec<char> = suggestion.0.chars().collect();
         let suggestion = Rc::new(Suggestion::new(Rc::new(suggestion.0), suggestion.1));
         Trie::insert_at(&mut self.root, &str, suggestion);
@@ -117,6 +122,12 @@ impl Trie {
             }
             return vec![];
         }
+    }
+}
+
+impl AutoCompletor for Trie {
+    fn suggestions(&self, prefix: &str) -> Vec<Rc<Suggestion>> { 
+        self.suggestions(prefix)
     }
 }
 

@@ -1,5 +1,7 @@
 //! The naive auto complete suggestion module
 
+
+use crate::AutoCompletor;
 use crate::Suggestion;
 use std::collections::BTreeSet;
 use std::rc::Rc;
@@ -28,6 +30,14 @@ impl NaiveAutoComplete {
             .map(|s| s.clone())
             .collect::<Vec<Rc<Suggestion>>>();
         matching_suggestions
+    }
+
+    
+}
+
+impl AutoCompletor for NaiveAutoComplete {
+    fn suggestions(&self, prefix: &str) -> Vec<Rc<Suggestion>> { 
+        self.suggestions(prefix)
     }
 }
 
